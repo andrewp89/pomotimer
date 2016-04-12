@@ -1,0 +1,70 @@
+body{
+  background-color: #ADAA53;
+}
+
+h1 {
+  color: #5bc0de;
+  font-family: Permanent Marker;
+  font-size: 50px;
+  text-shadow: 2px 2px rgb(60, 118, 61);
+}
+
+.btn{
+  font-family: Permanent Marker;
+  font-size: 30px;
+  border-radius: 50%;
+  
+}
+a {
+  color: yellow;
+  font-size: 50px;
+}
+
+#leftSideID{
+  border-radius: 50%;
+   text-align:center;
+   background-color:  #00cc99
+}
+
+#rightSideID{
+    border-radius: 50%;
+  text-align:center;
+
+  background-color: #ccffcc;
+}
+
+#timerBoxOutline {
+  margin-top: 20px;
+  width: 300px;
+    margin-left: 142.5px;
+  border: 3px solid black;
+  height: 40px;
+  background-color: #ccffcc;
+  border-radius: 20%;
+}
+#timerFill {
+    width: 1px;
+   /* margin-left: px; */
+    border-radius: 20%;
+    background-color: #00cc99;
+    height: 34px;
+}
+
+
+#pomoBoxOutline {
+  margin-top: 20px;
+  width: 300px;
+  margin-left: 142.5px;
+  border: 3px solid black;
+  height: 40px;
+  background-color: #00cc99;
+  border-radius: 20%;
+}
+#pomoFill {
+  border-radius: 20%;
+    width: 1px;
+   /* margin-left: px; */
+    border: 15x solid navy;
+    background-color: #ccffcc;
+    height: 34px;
+}
