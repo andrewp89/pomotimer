@@ -6,13 +6,12 @@
 
         TODO:
 
-            >> Make Animations look less shit: work in progrress
+            >> Make Animations look less shit: work in progress
             >> fix CSS/LAYOUT: work in progress
-            >> convert into minutes:
-            >> upload Github
-            >> testign github update 2
+            >> convert into minutes: done
+            >> upload Github: done
  ====================================================================
-       >> Pomo Named Variable, Ids & Function refer to the break
+       >> Pomo Named Variable, Ids & Function refer to the break part
 */
 
   $(document).ready(function() {
@@ -37,37 +36,38 @@
 
 
     //                 **** 25 Minute Timer Plus & Minus
-  var timerCount = 25;
+  var timerCount = 25 * 60;
     //                  --- counts up
   $('#timerUp').click(function() {
-    timerCount += 1;
-   document.getElementById("timer").innerHTML = timerCount;
+    timerCount += 60;
+   document.getElementById("timer").innerHTML = timerCount / 60;
   });
     //                  ---- counts Down
   $('#timerDown').click(function() {
     //                  prevents counter < 0
     if (timerCount >= 1) {
-      timerCount -= 1;
-   document.getElementById("timer").innerHTML = timerCount;
+      timerCount -= 60;
+   document.getElementById("timer").innerHTML = timerCount / 60;
     } else {
       alert("dont be lazy!")
     }
   });
 
     //                 **** 25 Minute Pomo Plus & Minus
-  var pomoCount = 5;
+  var pomoCount = 5 * 60;
     //                  ---- counts up
   $('#pomoUp').click(function() {
-    pomoCount += 1;
-   document.getElementById("pomoTimer").innerHTML = pomoCount;
+    pomoCount += 60;
+   document.getElementById("pomoTimer").innerHTML = pomoCount / 60;
   });
     //                 --- countsdown
   $('#pomoDown').click(function() {
     if (pomoCount >= 1) {
-      pomoCount = pomoCount - 1;
-   document.getElementById("pomoTimer").innerHTML = pomoCount;
+     pomoCount -= 60;
+
+   document.getElementById("pomoTimer").innerHTML = pomoCount / 60;
     } else {
-      alert("dont mess with me boy")
+      alert("dont do this")
     }
   });
 
@@ -104,13 +104,14 @@
 
     $('#resetButton').click(function(){
 //                 --Enables + - and start button. Disables Reset
-            document.getElementById('resetButton').disabled = true;
+
             document.getElementById('timerStart').disabled = false;
             document.getElementById('timerUp').disabled = false;
             document.getElementById('timerDown').disabled = false;
   clearInterval(stoppingTimer)
   timerCount = 25;
   document.getElementById("timer").innerHTML = timerCount;
+     timerCount = 25 * 60;
   resetTween();
   });
 
@@ -130,7 +131,9 @@
     //                 ****  ^--- Function that counts down  ******
   function pomoSecondsDown() {
   if (pomoCount >= 1) {
+
     document.getElementById("pomoTimer").innerHTML =  pomoCount -= 1;
+    console.log(pomoCount);
     } else {
       alert("Break has finsihed - Get back to work");
       clearInterval(stopping)
@@ -140,13 +143,14 @@
   $('#resetPomoButton').click(function(){
     console.log("test");
   //                 --Enables + - and start button. Disables Reset
-             document.getElementById('resetPomoButton').disabled = true;
+
              document.getElementById('pomoStart').disabled = false;
              document.getElementById('pomoUp').disabled = false;
              document.getElementById('pomoDown').disabled = false;
        clearInterval(stopping)
   pomoCount = 5;
   document.getElementById("pomoTimer").innerHTML = pomoCount;
+     pomoCount = 5 * 60;
   resetTweenPomo();
 
   });
