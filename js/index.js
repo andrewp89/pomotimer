@@ -1,19 +1,20 @@
-/* 
+/*
 *** User Story: I can start a 25 minute pomodoro, and the timer will go *** off once 25 minutes has elapsed.
 *** User Story: I can reset the clock for my next pomodoro.
 *** User Story: I can customize the length of each pomodoro.
 =====================================================================
-   
+
         TODO:
 
             >> Make Animations look less shit: work in progrress
             >> fix CSS/LAYOUT: work in progress
             >> convert into minutes:
             >> upload Github
+            >> testign github update 2
  ====================================================================
        >> Pomo Named Variable, Ids & Function refer to the break
 */
- 
+
   $(document).ready(function() {
 
     //                  Timer ANIMATED COUNT BAR
@@ -32,9 +33,9 @@
   function resetTweenPomo(){
     TweenMax.to($("#pomoFill"), 1, {width: 0});
   }
-  
-  
-  
+
+
+
     //                 **** 25 Minute Timer Plus & Minus
   var timerCount = 25;
     //                  --- counts up
@@ -52,7 +53,7 @@
       alert("dont be lazy!")
     }
   });
-  
+
     //                 **** 25 Minute Pomo Plus & Minus
   var pomoCount = 5;
     //                  ---- counts up
@@ -69,16 +70,16 @@
       alert("dont mess with me boy")
     }
   });
-  
+
     //                 ****** RESET the TIMER button & ANIMATED BAR
   $('#resetButton').click(function(){
     timerCount = 25;
    document.getElementById("timer").innerHTML = timerCount;
-  
+
     resetTween();
   });
-  
-  
+
+
     //                 ***** Timer Start Button Count Down starts Interval & calls counting function
   $('#timerStart').click(function(){
 //                    --Disables + - and start button. Enables Reset
@@ -98,9 +99,9 @@
         timerCount = 0;
           alert("Count Down Finished: Break time");
         clearInterval(stoppingTimer)
-  
+
     };
-    
+
     $('#resetButton').click(function(){
 //                 --Enables + - and start button. Disables Reset
             document.getElementById('resetButton').disabled = true;
@@ -112,9 +113,9 @@
   document.getElementById("timer").innerHTML = timerCount;
   resetTween();
   });
-    
+
   }
-  
+
     //                 **** Pomo Start Button Count Down starts Interval & calls counting function
   $('#pomoStart').click(function(){
 //                    --Disables + - and start button. Enables Reset
@@ -134,7 +135,7 @@
       alert("Break has finsihed - Get back to work");
       clearInterval(stopping)
   };
-  
+
   //                ******  RESET  the POMO button & ANIMATED BAR
   $('#resetPomoButton').click(function(){
     console.log("test");
@@ -147,10 +148,10 @@
   pomoCount = 5;
   document.getElementById("pomoTimer").innerHTML = pomoCount;
   resetTweenPomo();
-  
+
   });
-  
-  
-  
+
+
+
   }
   });
